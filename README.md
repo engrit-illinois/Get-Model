@@ -59,7 +59,7 @@ The parameter name may be omitted if the value is given as the first or only par
 
 ### -OUDN [string]
 Optional string.  
-The OU distinguished name of the OU to limit the computername search to.  
+The distinguished name of the OU to limit the computername search to.  
 Default is `"OU=Desktops,OU=Engineering,OU=Urbana,DC=ad,DC=uillinois,DC=edu"`.  
 
 ### -Log
