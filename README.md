@@ -82,4 +82,4 @@ Default is `"c:\engrit\logs"`.
 # Notes
 - Machines for which data could not be retrieved will have an `Error` value of `TRUE` and will have null data otherwise.
 - Machines for which data was retrieved will have a null `Error` value.
-- By mseng3
+- By mseng3. See my other projects here: https://github.com/mmseng/code-compendium.
