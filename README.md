@@ -3,9 +3,8 @@ This script reports the Manufacturer (Make), Model, and TotalPhysicalMemory size
 It optionally outputs a log and a CSV file of the data.  
 
 # Usage
-- Download `Get-Model.psm1`
-- Import it as a module: `Import-Module "c:\path\to\script\Get-Model.psm1"`
-- Run it using the examples and parameter documentation below.
+1. Download `Get-Model.psm1` to `$HOME\Documents\WindowsPowerShell\Modules\Get-Model\Get-Model.psm1`
+2. Run it using the examples and parameter documentation below.
 
 # Examples
 - `Get-DiskSpace "espl-114-01"`
