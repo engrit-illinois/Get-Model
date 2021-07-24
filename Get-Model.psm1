@@ -59,14 +59,16 @@ function Get-Model {
 			$this = $null
 			try {
 				$this = Get-CIMInstance -ClassName "Win32_ComputerSystem" -ComputerName $comp -OperationTimeoutSec $CIMTimeoutSec -ErrorAction "SilentlyContinue"
+				$this2 = Get-CIMInstance -ClassName "Win32_BIOS" -ComputerName $comp -OperationTimeoutSec $CIMTimeoutSec -ErrorAction "SilentlyContinue"
 			}
 			catch {
 			}
 			
 			$error = $null
-			if($this) {
+			if($this -and $this2) {
 				$this | Add-Member -NotePropertyName "Make" -NotePropertyValue $this.Manufacturer
 				$this | Add-Member -NotePropertyName "Memory" -NotePropertyValue "$([math]::round($this.TotalPhysicalMemory / 1MB))MB"
+				$this | Add-Member -NotePropertyName "Serial" -NotePropertyValue $this2.SerialNumber
 			}
 			else {
 				$error = $true
@@ -76,7 +78,7 @@ function Get-Model {
 			}
 			$this | Add-Member -NotePropertyName "Error" -NotePropertyValue $error
 			
-			log "$($this.Name),$($this.Error),$($this.Make),$($this.Model),$($this.Memory)"
+			log "$($this.Name),$($this.Error),$($this.Make),$($this.Model),$($this.Memory),$($this.Serial)"
 			
 			$data += @($this)
 		}
@@ -84,12 +86,12 @@ function Get-Model {
 	}
 	
 	function Print-Data($data) {
-		log ($data | Sort Name | Select Name,Error,Make,Model,Memory | Format-Table -AutoSize -Wrap | Out-String).Trim() -NoTS
+		log ($data | Sort Name | Select Name,Error,Make,Model,Memory,Serial | Format-Table -AutoSize -Wrap | Out-String).Trim() -NoTS
 	}
 	
 	function Output-Csv($data) {
 		log "-Csv was specified. Outputting gathered data to `"$CSVPATH`"..."
-		$data | Sort Name | Select Name,Error,Make,Model,Memory | Export-Csv -Path $CSVPATH -NoTypeInformation -Encoding Ascii
+		$data | Sort Name | Select Name,Error,Make,Model,Memory,Serial | Export-Csv -Path $CSVPATH -NoTypeInformation -Encoding Ascii
 		log "Done."
 		
 	}
