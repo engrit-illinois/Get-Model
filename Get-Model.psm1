@@ -52,7 +52,7 @@ function Get-Model {
 	}
 	
 	function Get-Data($comps) {
-		log "Name,Error,Make,Model,Memory"
+		log "Name,Error,Make,Model,Memory,Serial,BiosVersion"
 		
 		$data = @()
 		foreach($comp in $comps) {
