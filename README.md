@@ -7,10 +7,10 @@ It optionally outputs a log and a CSV file of the data.
 2. Run it using the examples and parameter documentation below.
 
 # Examples
-- `Get-DiskSpace "espl-114-01"`
-- `Get-DiskSpace "espl-114-01","espl-114-02","tb-207-01"`
-- `Get-DiskSpace "espl-114-*"`
-- `Get-DiskSpace "espl-114-*","tb-207-01","tb-306-*"`
+- `Get-Model "espl-114-01"`
+- `Get-Model "espl-114-01","espl-114-02","tb-207-01"`
+- `Get-Model "espl-114-*"`
+- `Get-Model "espl-114-*","tb-207-01","tb-306-*"`
 
 # Example output:
 ```powershell
