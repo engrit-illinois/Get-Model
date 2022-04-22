@@ -2,6 +2,8 @@
 This script reports the Manufacturer (Make), Model, and TotalPhysicalMemory size of a list of remote computers.
 It optionally outputs a log and a CSV file of the data.  
 
+Note: an updated version of this module which implements asynchronicity, at the expense of PowerShell 5.1 compatibility, is available here: [Get-MachineInfo](https://github.com/engrit-illinois/Get-MachineInfo).  
+
 # Usage
 1. Download `Get-Model.psm1` to `$HOME\Documents\WindowsPowerShell\Modules\Get-Model\Get-Model.psm1`
 2. Run it using the examples and parameter documentation below.
