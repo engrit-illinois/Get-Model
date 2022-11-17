@@ -5,7 +5,7 @@ It optionally outputs a log and a CSV file of the data.
 Note: an updated version of this module which implements asynchronicity, at the expense of PowerShell 5.1 compatibility, is available here: [Get-MachineInfo](https://github.com/engrit-illinois/Get-MachineInfo).  
 
 # Usage
-1. Download `Get-Model.psm1` to `$HOME\Documents\WindowsPowerShell\Modules\Get-Model\Get-Model.psm1`
+1. Download `Get-Model.psm1` to the appropriate subdirectory of your PowerShell [modules directory](https://github.com/engrit-illinois/how-to-install-a-custom-powershell-module).
 2. Run it using the examples and parameter documentation below.
 
 # Examples
